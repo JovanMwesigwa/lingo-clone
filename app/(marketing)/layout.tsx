@@ -1,6 +1,6 @@
 import React from "react";
-import { Header } from "./Header";
 import { Footer } from "./footer";
+import { Header } from "./header";
 
 const MarketingLayout = ({ children }: { children: React.ReactNode }) => {
   return (
