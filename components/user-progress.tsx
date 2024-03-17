@@ -2,9 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { InfinityIcon } from "lucide-react";
+import { courses } from "@/db/schema";
 
 type UserProgressProps = {
-  activeCourse: { imageSrc: string; title: string }; // Todo replace with db type
+  activeCourse: typeof courses.$inferSelect;
   hearts: number;
   points: number;
   hasActiveSubscription: boolean;

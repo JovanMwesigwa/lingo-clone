@@ -11,7 +11,7 @@ const LearnPage = async () => {
 
   const [userProgress] = await Promise.all([userProgressPromise]);
 
-  if (!userProgress || !userProgress.activeCourseId) {
+  if (!userProgress || !userProgress.activeCourse) {
     redirect("/courses");
   }
 
@@ -19,14 +19,14 @@ const LearnPage = async () => {
     <div className="flex flex-row-reverse gap-[48px] px-6">
       <StickyWrapper>
         <UserProgress
-          activeCourse={{ title: "Spanish", imageSrc: "/es.svg" }}
-          hearts={5}
-          points={10}
+          activeCourse={userProgress.activeCourse}
+          hearts={userProgress.hearts}
+          points={userProgress.points}
           hasActiveSubscription={false}
         />
       </StickyWrapper>
       <FeedWrapper>
-        <Header title="Learn" />
+        <Header title={userProgress.activeCourse.title} />
       </FeedWrapper>
     </div>
   );
